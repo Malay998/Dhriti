@@ -27,18 +27,23 @@
         header h1 {
             font-family: 'Nosifer', cursive; /* Change 'Your Desired Font' to the actual font you want to use */
             font-size: 8em; /* Change the font size as needed */
+            margin-bottom: 0.5em; /* Adjusted margin for better spacing */
         }
 
         nav {
             background-color: #000000;
-            padding: 0.5em 0;
+            padding: 1em 0; /* Adjusted padding for better spacing */
             text-align: center;
+            position: fixed; /* Fixed navigation for better user experience */
+            width: 100%;
+            top: 0;
+            z-index: 1000; /* Higher z-index to be on top of other elements */
         }
 
         nav a {
             text-decoration: none;
             color: #fff;
-            margin: 0 15px;
+            margin: 0 20px;
             font-weight: bold;
             position: relative;
             transition: color 0.3s;
@@ -265,6 +270,19 @@
     <footer>
         &copy; 2024 Dhriti Manjunath Reddy
     </footer>
+
+    <!-- JavaScript for smooth scrolling -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
