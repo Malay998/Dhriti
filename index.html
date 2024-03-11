@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,19 +26,19 @@
         }
 
         header h1 {
-            font-family: 'Nosifer', cursive; /* Change 'Your Desired Font' to the actual font you want to use */
-            font-size: 8em; /* Change the font size as needed */
-            margin-bottom: 0.5em; /* Adjusted margin for better spacing */
+            font-family: 'Nosifer', cursive;
+            font-size: 8em;
+            margin-bottom: 0.5em;
         }
 
         nav {
             background-color: #000000;
-            padding: 1em 0; /* Adjusted padding for better spacing */
+            padding: 1em 0;
             text-align: center;
-            position: fixed; /* Fixed navigation for better user experience */
+            position: fixed;
             width: 100%;
             top: 0;
-            z-index: 1000; /* Higher z-index to be on top of other elements */
+            z-index: 1000;
         }
 
         nav a {
@@ -113,7 +114,9 @@
             }
         }
     </style>
+
 </head>
+
 <body>
 
     <header>
@@ -283,7 +286,23 @@
                 });
             });
         });
+
+        // Asynchronously load background and header images
+        document.addEventListener("DOMContentLoaded", function () {
+            var background = new Image();
+            background.src = 'optimized-background-image.jpg';
+            background.onload = function () {
+                document.body.style.backgroundImage = 'url(' + background.src + ')';
+            };
+
+            var header = new Image();
+            header.src = 'optimized-header-image.jpg';
+            header.onload = function () {
+                document.querySelector('header').style.backgroundImage = 'url(' + header.src + ')';
+            };
+        });
     </script>
 
 </body>
+
 </html>
